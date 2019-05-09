@@ -7,31 +7,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:sport.properties"/>
 
-    <bean id="myFortune"
+    <bean id="myFortuneService"
            class="demo.HappyFortuneService">
 
     </bean>
 
     <bean id="myCoach"
           class="demo.footballCoach">
-        <constructor-arg ref="myFortune"/>
+
+        <constructor-arg ref="myFortuneService"/>
+
     </bean>
-    <bean id="myLoggerConfig" class="demo.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE" />
-        <property name="printedLoggerLevel" value="FINE"/>
-    </bean>
-
-    <bean id="myBasketballCoach"
-          class="demo.BasketballCoach">
-
-        <property name="fortuneService" ref="myFortune" />
-
-        <property name="emailAddress" value="${foo.email}" />
-        <property name="team" value="${foo.team}" />
-    </bean>
-
 
 
 </beans>
