@@ -29,6 +29,12 @@
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
+    <bean id="myBasketballCoach"
+          class="demo.BasketballCoach">
+
+        <property name="fortuneService" ref="myFortune" />
+    </bean>
+
 
 
 </beans>
