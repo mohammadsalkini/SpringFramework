@@ -15,7 +15,8 @@
 
     <bean id="myCoach"
           class="demo.TrackCoach"
-          scope="prototype">
+          init-method="doMyStartupStuff"
+          destroy-method="doMyCleanupStuff">
 
         <constructor-arg ref="myFortuneService"/>
 
